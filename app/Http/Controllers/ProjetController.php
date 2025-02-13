@@ -60,10 +60,9 @@ class ProjetController extends Controller
         return redirect()->route('projets.index')->with('success', 'Projet mis à jour avec succès.');
     }
 
-    // Supprimer projet
     public function destroy(Projet $projet)
     {
         $projet->delete();
-        return redirect()->route('projets.index')->with('success', 'Projet supprimé avec succès.');
+        return redirect()->route('projets.index');
     }
 }

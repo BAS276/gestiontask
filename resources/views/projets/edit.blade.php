@@ -1,52 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier {{ $projet->nom }}</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
             margin: 0;
             padding: 20px;
         }
+
         h1 {
-            color: #333;
+            color: #ffffff;
+            text-align: center;
         }
+
         form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: #1e1e1e;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             max-width: 400px;
-            margin: 0 auto;
+            margin: 20px auto;
         }
+
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #bbbbbb;
         }
-        input, textarea {
+
+        input,
+        textarea {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 10px 0px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 6px;
+            background: #2c2c2c;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
         }
+
+        input:focus,
+        textarea:focus {
+            background: #333333;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        }
+
         button {
-            background-color: #28a745;
+            background-color: #4caf50;
             color: #fff;
             border: none;
-            padding: 10px;
-            border-radius: 4px;
+            padding: 12px;
+            border-radius: 6px;
             cursor: pointer;
             width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+
         }
+
         button:hover {
-            background-color: #218838;
+            background-color: #45a049;
         }
     </style>
 </head>
+
 <body>
     <h1>Modifier {{ $projet->nom }}</h1>
     <form action="{{ route('projets.update', $projet) }}" method="POST">
@@ -63,4 +90,5 @@
         <button type="submit">Mettre à jour</button>
     </form>
 </body>
+
 </html>

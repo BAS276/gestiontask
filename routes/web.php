@@ -27,10 +27,20 @@ Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('regi
 Route::post('/register', [AuthController::class, 'register']);
 
 
-// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-// Route::put('projets/{projet}/taches/{tache}', [TacheController::class, 'update'])->name('projets.taches.update');
 
 
+
+
+
+
+
+
+
+
+
+
+Route::delete('/projets/{projet}/taches/{tache}', [TacheController::class, 'destroy'])
+    ->name('projets.taches.destroy');
 Route::middleware('auth')->group(function () {
     Route::resource('projets', ProjetController::class);
     Route::resource('projets.taches', controller: TacheController::class);
